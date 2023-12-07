@@ -1,0 +1,540 @@
+@import "./variables";
+
+@mixin loginHeader {
+    padding: 1.5rem 0 2rem 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #192052;
+    font-family: 'Roboto', sans-serif;
+
+    @media screen and (min-width: $media-tablet) {
+        font-size:30px
+    }
+}
+
+@mixin loginButton {
+    padding: 0.8rem 1.5rem;
+    background-color: $royal-blue-600;
+    border: none;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #254be3;
+    }
+}
+
+@mixin loginLink {
+    margin-left: 5px;
+    color: #254ff6;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        color: #253be3;
+    }
+}
+
+@mixin overlay-art-credit {
+    position: inherit;
+    bottom: 2rem;
+    font-size: 13px;
+    font-weight: 600;
+    color: $rhino-3;
+
+    a {
+        color: $rhino-3;
+
+        &:hover {
+            color: $royal-blue-500;
+        }
+    }
+}
+
+.overlay-logo-wrapper, .mobile-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+        width: 30px;
+    }
+
+    h3 {
+        color: #3e5acb;
+        font-family: 'Marmelad', sans-serif;
+        font-size: 30px;
+    }
+}
+.mobile-logo-wrapper {
+
+    justify-content: center;
+    h3{
+        font-size: 25px;
+    }
+}
+
+/**LeftOverlay & RightOverlay SCSS*/
+.left-overlay,
+.right-overlay {
+    display: none;
+}
+
+/*LoginPage SCSS*/
+.loginPage {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(../assets/wave-haikei-bg2.svg);
+    background-size: cover;
+
+    &__box {
+        margin: 0 auto;
+        border-radius: 1.5rem;
+        background-color: #ffffff;
+        width: 400px;
+        height: 90vh;
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+.leftSide-overlay {
+    width: 100%;
+    position: relative;
+}
+
+.rightSide-overlay {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+/*SignupOverlay SCSS*/
+.sign-up {
+    width: 100%;
+    padding: 5rem 2rem 0 2rem;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    display: none;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.sign-up-header {
+    @include loginHeader();
+}
+
+.sign-up-name-form {
+    width: 100%;
+    display: flex;
+    gap: 3%;
+
+    .signup-input{
+        width: 95%;
+    }
+}
+
+.sign-up-form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-size: 13px;
+    }
+}
+
+.signup-input {
+    border: 1px solid $grey-border-2;
+    padding: 0.6rem 0.6rem;
+    border-radius: 0.3rem;
+    background-color: #f7f7f7;
+    font-size: 12px;
+    &:placeholder-shown{
+        font-size: 12px;
+    }
+    &:focus{
+        outline: none;
+    }
+
+}
+
+.sign-up-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    
+    margin-top: 0.7rem;
+
+    p {
+        font-size: 14px;
+        font-weight: 500;
+
+        span {
+            @include loginLink();
+        }
+    }
+
+
+    button {
+        @include loginButton();
+    }
+}
+.error-animation{
+    display: flex;
+    gap: 4px;
+    animation: bounce 0.5s 0.15s ease;
+}
+.signUp-error-msg{
+    font-size: 13px;
+    font-weight: 500;
+    color: #ed4337;
+}
+.signUp-form-error{
+    border: 1px solid #ed4337;
+}
+
+/*LoginOverlay SCSS*/
+.login {
+    width: 100%;
+    padding: 5rem 2rem 0 2rem;
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.login-header {
+    @include loginHeader();
+}
+
+.login-form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-size: 13px;
+    }
+}
+
+.login-input {
+    border: 1px solid $grey-border-2;
+    padding: 0.6rem 0.6rem;
+    border-radius: 0.3rem;
+    background-color: #f7f7f7;
+
+    &:placeholder-shown{
+        font-size: 12px;
+    }
+    &:focus{
+        outline: none;
+    }
+    &:invalid{
+
+        border: 1px solid rgba(#ed4337, 0.5);
+    }
+}
+
+.login-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-top: 0.7rem;
+
+    p {
+        font-size: 13px;
+        font-weight: 500;
+
+        span {
+            @include loginLink();
+        }
+    }
+
+
+    button {
+        @include loginButton();
+    }
+}
+
+.overlay-opacity-full {
+    opacity: 1;
+    display: block;
+}
+
+.overlay-opacity-none {
+    opacity: 0;
+    display: none;
+}
+
+
+@media screen and (min-width: $media-tablet) {
+    .loginPage__box {
+        width: 800px;
+        height: 600px;
+        display: flex;
+    }
+
+    .leftSide-overlay {
+        width: 50%;
+        position: relative;
+    }
+
+    .rightSide-overlay {
+        width: 50%;
+        position: relative;
+    }
+
+    .sign-up,
+    .login {
+        padding: 5rem 2.5rem 0 2.5rem;
+        display: block;
+    }
+    .mobile-logo-wrapper {
+
+        display: none;
+    }
+
+    .left-overlay,
+    .right-overlay {
+        display: block;
+    }
+
+    /*LeftOverlay scss*/
+    .left-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: auto;
+        opacity: 0;
+        z-index: -1;
+        border-radius: 1.2rem;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: opacity 1s 0.5s ease-in-out;
+
+        &__text-wrapper {
+            padding: 4rem 4rem 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            p {
+                font-size: 15px;
+                font-weight: 500;
+                letter-spacing: 0.2px;
+                color: $rhino-5;
+            }
+        }
+
+        .overlay-art-credit-left {
+            @include overlay-art-credit();
+            left: 4rem;
+        }
+
+    }
+
+    #surfingSVG {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 380px;
+        max-width: 500px;
+    }
+
+    /*RightOverlay SCSS*/
+    .right-overlay {
+        pointer-events: auto;
+        z-index: 2;
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 1.2rem;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: opacity 0.5s ease-in-out, z-index 0.5s 1s linear;
+
+        &__text-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 4rem 4rem 3rem 4rem;
+            gap: 1rem;
+
+            p {
+                font-size: 15px;
+                font-weight: 500;
+                letter-spacing: 0.2px;
+                color: $rhino-5;
+            }
+        }
+
+        .overlay-art-credit-right {
+            @include overlay-art-credit();
+            right: 4rem;
+        }
+
+    }
+
+    #surfSVG {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 400px;
+        max-width: 470px;
+    }
+
+    .overlay-z-index-transition-in {
+        transition: opacity 1s 0.5s ease-in-out;
+    }
+
+    .overlay-z-index-transition-out {
+        transition: opacity 0.5s ease-in-out, z-index 0.5s 1s linear;
+    }
+
+    .overlay-index-change-behind {
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .overlay-index-change-front {
+        z-index: 2;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .left-overlay__text-wrapper,
+    .right-overlay__text-wrapper {
+        padding: 4rem 2.5rem 3rem 2.5rem;
+    }
+
+    .loginPage-box-moving {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #f0f6ff;
+        border-radius: 1.2rem;
+        z-index: 1;
+    }
+
+    .loginPage-box-moving-right {
+        right: 0;
+        transition: right 1s ease-in-out;
+    }
+
+    .loginPage-box-moving-left {
+        right: 50%;
+        transition: right 1s ease-in-out;
+    }
+
+    /*login signup */
+    .overlay-opacity-full {
+        opacity: 1;
+    }
+    
+    .overlay-opacity-none {
+        opacity: 0;
+    }
+    .signup-input, .login-input {
+        font-size: 13px;
+        &:placeholder-shown{
+            font-size: 12px;
+        }
+    }
+    .sign-up-form-item, .login-form-item {
+    
+        label {
+            font-size: 14px;
+        }
+    }
+    .login-buttons, .sign-up-buttons{
+        p{
+            font-size: 13px;
+        }
+    }
+
+}
+
+@media screen and (min-width: $media-lg) {
+    .loginPage__box {
+        width: 1000px;
+        height: 700px;
+    }
+
+    .sign-up,
+    .login {
+        padding: 7rem 4rem 0 4rem;
+    }
+
+    .left-overlay__text-wrapper,
+    .right-overlay__text-wrapper {
+        padding: 4rem 4rem 3rem 4rem;
+    }
+}
+
+//animations
+@keyframes bounce {
+    0% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+    37% {
+      transform: translateX(5px);
+      timing-function: ease-out;
+    }
+    55% {
+      transform: translateX(-5px);
+      timing-function: ease-in;
+    }
+    73% {
+      transform: translateX(4px);
+      timing-function: ease-out;
+    }
+    82% {
+      transform: translateX(-4px);
+      timing-function: ease-in;
+    }
+    91% {
+      transform: translateX(2px);
+      timing-function: ease-out;
+    }
+    96% {
+      transform: translateX(-2px);
+      timing-function: ease-in;
+    }
+    100% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+  }
+
+@media screen and (min-width: 1300px) {
+    .loginPage__box {
+        width: 1200px;
+        height: 700px;
+    }
+}

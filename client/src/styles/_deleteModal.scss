@@ -1,0 +1,80 @@
+@import "./variables";
+
+
+.deleteModal-container{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(#000000, 0.6);
+}
+.deleteModal-hide{
+    display: none;
+}
+.deleteModal-box{
+    background: #ffffff;
+    width: 400px;
+    border-radius: 0.5rem;
+    padding: 1.8rem 1.5rem;
+
+    h3{
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 0.3px;
+        margin: 1rem 0;
+    }
+    p{
+        font-size: 14px;
+        margin-bottom: 2.5rem;
+        text-align: center;
+
+        span{
+            font-weight: 600;
+        }
+    }
+
+    &__btns{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        button{
+            padding: 0.6rem 1.8rem;
+
+            border: none;
+            border-radius: 1.5rem;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+
+            &:first-child{
+                background-color: #efefef;
+                border: 1px solid #dcdcdc;
+                color: $azure-blue-750;
+
+                &:hover{
+                    background-color: #dcdcdc;
+                    border: 1px solid #bdbdbd;
+                }
+            }
+            &:last-child{
+                border: 1px solid $azure-blue-700;
+                background-color: $azure-blue-700;
+                color: #ffffff;
+
+                &:hover{
+                    background-color: $azure-blue-750;
+                }
+            }
+        }
+    }
+
+
+}

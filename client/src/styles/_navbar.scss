@@ -1,0 +1,71 @@
+@import "./variables";
+
+.navbar{
+    height: 3rem;
+    border-bottom: 1px solid $grey-border;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.navbar-logo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 16rem;
+    padding-left: 3rem;
+    h1{
+        font-weight: 600;
+        color: #3e5acb;
+        font-family: 'Marmelad', sans-serif;
+        letter-spacing: 1px;
+    }
+}
+#waveLogo{
+    height: 2.2rem;
+    width: 2.2rem;
+}
+.navbar-create-btn{
+    padding: 0.5rem 1rem;
+    background-color: rgba(#cacbd7, 0.55);
+    border: none;
+    border-radius: 0.2rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgba(#cacbd7, 0.9);
+    }
+}
+
+.navbar-right{
+    padding-right: 3rem;
+}
+.navbar-userProfile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.1rem 0.8rem;
+    p{
+        font-size: 15px;
+    }
+    border-radius: 0.2rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid $azure-radiance-300;
+    }
+}
+#userProfleIcon{
+    height: 1.9rem;
+    width: 1.9rem;
+}
+.userProfile-dropdown-icon{
+    color: rgba(#aaaaaa, 1);
+}

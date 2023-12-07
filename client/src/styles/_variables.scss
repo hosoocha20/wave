@@ -1,0 +1,133 @@
+$azure-radiance-50: #f0f6fe;
+$azure-radiance-100: #dceafd;
+$azure-radiance-200: #c1dbfc;
+$azure-radiance-300: #97c6f9;
+$azure-radiance-400: #65a7f5;
+$azure-radiance-500: #377eef;
+$azure-radiance-600: #2c66e4;
+$azure-radiance-700: #2352d2;
+$azure-radiance-800: #2344aa;
+$azure-radiance-900: #223d86;
+$azure-radiance-950: #192652;
+
+$azure-blue-50: #edfbff;
+$azure-blue-100: #d6f3ff;
+$azure-blue-200: #b5edff;
+$azure-blue-300: #83e3ff;
+$azure-blue-400: #48d1ff;
+$azure-blue-500: #1eb4ff;
+$azure-blue-600: #0697ff;
+$azure-blue-700: #0083ff;
+$azure-blue-750 : #0076E6;
+$azure-blue-800: #0864c5;
+$azure-blue-900: #0d569b;
+$azure-blue-950: #0e345d;
+
+
+
+$royal-blue-50: #f0f4fe;
+$royal-blue-100: #dce6fd;
+$royal-blue-200: #c1d4fc;
+$royal-blue-300: #97baf9;
+$royal-blue-400: #6696f4;
+$royal-blue-500: #4270ef;
+$royal-blue-600: #3659e5;
+$royal-blue-700: #243dd1;
+$royal-blue-800: #2334aa;
+$royal-blue-900: #223186;
+$royal-blue-950: #192052;
+
+
+
+$rhino-5: #31415f;
+$rhino-4: #45546f;
+$rhino-3: #51667e;
+$rhino-2: #6e7a8f;
+$rhino-1: #acb3bf;
+
+$bright-sun-50: #fefce8;
+$bright-sun-100: #fffac2;
+$bright-sun-200: #fff287;
+$bright-sun-300: #ffe343;
+$bright-sun-400: #ffd427;
+
+$electric-violet-50: #edefff;
+$electric-violet-100: #dee2ff;
+$electric-violet-200: #c3c9ff;
+$electric-violet-300: #9fa5ff;
+$electric-violet-400: #7c79ff;
+$electric-violet-500: #6759fb;
+$electric-violet-600: #5c3ef0;
+$electric-violet-700: #4e2ed4;
+$electric-violet-800: #3f28ab;
+$electric-violet-900: #372887;
+$electric-violet-950: #21184e;
+
+$malachite-50: #f0fdf3;
+$malachite-100: #dcfce5;
+$malachite-200: #bcf6cc;
+$malachite-300: #88eda6;
+$malachite-400: #39d869;
+$malachite-500: #24c355;
+$malachite-600: #18a142;
+$malachite-700: #177e37;
+$malachite-800: #17642f;
+$malachite-900: #155229;
+$malachite-950: #062d14;
+
+
+
+$my-grey: #f7f8fc;
+$my-grey-2:#dadff1;
+$grey-border: #eaecef;
+$grey-border-2: #d1d1d1;
+$grey-background: #f2f2f2;
+$delete-red: #ed5e68;
+
+$media-lg: 1024px;
+$media-tablet: 768px;
+$media-mobile: 500px;
+
+
+
+/*Custom Reusable Styles*/
+.dropdown-show{
+    display: block;
+}
+.dropdown-hide{
+    visibility: hidden;
+}
+.hideModal{
+    display: none;
+}
+.showModal{
+    display: block;
+}
+.hideVisibility{
+    visibility: hidden;
+}
+.opacity-none{
+    opacity: 0;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #dcdcdc #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }

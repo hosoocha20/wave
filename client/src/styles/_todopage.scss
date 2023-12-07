@@ -1,0 +1,559 @@
+@import "./variables";
+
+@mixin todo-bg-effect(){
+    border: 1px solid $grey-border;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 15px -8px rgba(157, 155, 155, 0.69);
+}
+
+.todoPage-container{
+    background-color: $my-grey;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    gap: 3rem;
+    position: relative;
+    padding: 2rem 2rem;
+    box-shadow: 0px 0px 15px -8px rgba(157, 155, 155, 0.69);
+}
+.bl{
+    background-image: url(../assets/bg-1.svg);
+}
+.or{
+    background-image: url(../assets/bg-2.svg);
+}
+.pu{
+    background-image: url(../assets/bg-3.svg);
+}
+.blor{
+    background-image: url(../assets/bg-6.svg);
+}
+.blpu{
+    background-image: url(../assets/bg-7.svg);
+}
+.publ{
+    background-image: url(../assets/bg-4.svg);
+}
+.puor{
+    background-image: url(../assets/bg-5.svg);
+}
+.todoPage-left{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    @include todo-bg-effect();
+}
+.taskList-container{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 1.5rem 0 0 0;
+    padding-top: 7px;
+    flex-grow: 1;
+    min-height: 0;
+    max-height: 60vh;
+    overflow: hidden;
+    overflow-y: auto;
+    
+    scrollbar-gutter: stable;
+}
+.taskList-newForm{
+    position: sticky;
+    bottom: 0;
+    left: 16rem;
+    background-color: none;
+    backdrop-filter: blur(2px);
+    margin: 10px 4rem 1.5rem 4rem;
+    padding: 1.2rem 2rem;
+    border-radius: 0.45rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+
+    
+    input{
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid #cdcdcd;
+        border-radius: 0.45rem;
+        position: absolute;
+        left: 0;
+        padding: 0 calc(2rem + 30px);
+
+        &:focus{
+            outline: none;
+            border: 2px solid $azure-radiance-300;
+        }
+        &:hover{
+            border: 2px solid $azure-radiance-300;
+        }
+    }
+
+
+}
+
+
+/*ListHeader SCSS*/
+@mixin filterActive($color){
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 2px solid $color;
+    }    
+}
+
+.todoPage-header{
+    border-bottom: 1px solid $grey-border;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.todoPage-ListName{
+    padding: 1.3rem 3.2rem;
+    text-align: center;
+}
+.todoPage-filter{
+    display: flex;
+    padding-left: 0.5rem;
+    justify-content: center;
+
+    div{
+        cursor: pointer;
+        width: 12rem;
+        min-width: max-content;
+        text-align: center;
+        padding: 0.5rem 0 1.5rem 0;
+    }
+}
+.list-active-progress{
+    @include filterActive($azure-radiance-300);
+}
+.list-active-important{
+    @include filterActive($bright-sun-300);
+}
+.list-active-completed{
+    @include filterActive($malachite-300);
+}
+.list-active-all{
+    @include filterActive($electric-violet-300);
+}
+.todoPage-sort{
+    position: absolute;
+    top: 1.3rem;
+    right: 4rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    p{
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .sort-icon{
+        color:#45546f;
+    }
+
+    &:hover{
+        border: 1px solid $azure-radiance-300;
+
+        .sort-icon{
+            color: $azure-radiance-600;
+        }
+        .todoPage-sort__label{
+            color: $azure-radiance-600;
+        }
+
+    }
+
+    &__label{
+        padding: 0.4rem 0.6rem;
+        display: flex;
+        gap: 3px;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid transparent;
+
+
+    }
+    &__dropdownSection{
+        position: inherit;
+        left: 0;
+        margin-top: 1rem;
+        width: max-content;
+        background-color: #ffffff;
+        color: $azure-radiance-600;
+        border-radius: 0.35rem;
+        border: 1px solid transparent;
+        box-shadow: 0px 0px 9px rgba(#000000, 0.2);
+        z-index:9;
+        overflow: hidden;
+        div{
+            display: flex;
+            gap: 5px;
+            padding: 1rem 0.7rem;
+            p{
+                font-size: 13px;
+            }
+
+            &:hover{
+                background-color: #eaeaea;
+            }
+        }
+
+
+    }
+}
+.todoPage-sort-active{
+    border: 1px solid $azure-radiance-300;
+
+    .sort-icon{
+        color: $azure-radiance-600;
+    }
+    .todoPage-sort__label{
+        color: $azure-radiance-600;
+    }
+}
+
+
+
+/*ListSide SCSS*/
+@mixin listSide-filter-block-style($color){
+    font-size: 25px;
+    padding-left: 0.8rem;
+    position: relative;
+    line-height: 0.9;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        border-radius: 100rem;
+        background-color: $color;
+    }
+}
+@mixin listSide-heading-text(){
+    letter-spacing: 1.1px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.listSide-container{
+    width: 400px;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    @include todo-bg-effect();
+
+    hr{
+        border: 0;
+        height: 1px;
+        background: #dfdfdf;
+    }
+}
+.listSide-title-form{
+    padding: 0.5rem 0.4rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    cursor: text;
+
+    input{
+        font-size: 20px;
+        font-weight: 600;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    &:hover{
+        background-color: #e0e0e0;
+    }
+
+}
+.listSide-bg-change{
+    margin: 1.5rem 0;
+    p{
+        @include listSide-heading-text();
+    }
+
+    &__options{
+        margin-top: 0.8rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    }
+
+}
+.listSide-bg-item{
+   position: relative; 
+   cursor: pointer;
+    transition: transform 0.2s linear;
+   &:hover{
+    transform: scale(1.1);
+   }
+}
+.bg-checkIcon{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    color: #ffffff;
+    font-size: 20px;
+}
+.listSide-filter-overview{
+    @include listSide-heading-text();
+    margin-top: 1rem;
+}
+.listSide-filter-display{
+    margin-top: 0.8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.5rem;
+}
+.listSide-filter-block{
+    p{
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        padding: 0.5rem 0;
+    }
+    &__num1{
+        @include listSide-filter-block-style($azure-radiance-300);
+    }
+    &__num2{
+
+        @include listSide-filter-block-style($bright-sun-300);
+    }
+    &__num3{
+        @include listSide-filter-block-style($malachite-400)
+    }
+    &__num4{
+        @include listSide-filter-block-style($electric-violet-300);
+    }
+}
+.listSide-end-container{
+    border-top: 1px solid $grey-border;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    padding: 1.2rem 0;
+
+    p{
+        font-size: 14px;
+    }
+
+    .listSide-trash-icon-container{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0 1rem;
+        right: 0;
+        font-size: 23px;
+        color: #404040;
+        cursor: pointer;
+
+        &:hover{
+            background-color: $grey-background;
+        }
+    }
+
+
+}
+
+/*ListItem SCSS*/
+.listItem{
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    margin: 0 4rem;
+    min-height: 60px;
+    padding: 0.5rem 2rem;
+    border-radius: 0.45rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+
+    &:hover{
+        box-shadow: 0px 0px 5px rgba(#000000, 0.1);
+    }
+
+    &__inputs{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        input{
+            &:checked + .listItem-title{
+                text-decoration: line-through;
+                text-decoration-color: $rhino-5 ;
+            }
+        }
+        p{
+            width: fit-content;
+        }
+    }
+    &__buttons{
+        position: relative;
+    }
+}
+.listItem-myDay-wrapper{
+    margin-left: 2.2rem;
+    gap: 3px;
+    display: flex;
+    align-items: center;
+    color: #6e6e6e;
+    .listItem-myDay-text{
+        font-size: 11px;
+    }
+}
+
+.listItem-taskWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p{
+        font-size: 14px;
+    }
+}
+.listItem-active{
+    box-shadow: 0px 0px 5px rgba(#000000, 0.1);
+}
+.listItem-options-btn{
+    cursor: pointer;
+    color: #9c9c9c;
+    padding: 3px 5px 3px 5px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+
+    &:hover{
+        color: $azure-radiance-500;
+    }     
+}
+.listItem-buttons-dropdown{
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px rgba(#000000, 0.2);
+    border-radius: 7px;
+    overflow: hidden;
+    width: max-content;
+    z-index: 1;
+
+    button{
+        border: none;
+        background-color: #ffffff;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        width: 100%;
+        padding: 10px 15px;
+
+        p{
+            font-size: 13px;
+            font-weight: 400;
+        }
+        &:hover{
+            background-color: #f4f4f4;
+        }
+    }
+}
+.delete-text{
+    color: $delete-red;
+}
+
+
+/*EditTask SCSS*/
+.editTask-container{
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+}
+.editTask-modal{
+    border: 1px solid $azure-radiance-400;
+    box-shadow: 0px 0px 5px rgba(#ffffff, 0.3);
+    background-color: #ffffff;
+    padding: 0.9rem 2rem;
+    border-radius: 0.45rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    z-index: 2;
+    position: relative;
+
+    form{
+        width: 100%;
+        border: none;
+
+        input{
+            width: 100%;
+            border: none;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+}
+.editTask-save-btn{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(#ffffff, 0.2);
+    color: #ffffff;
+    font-weight: 600;
+    border: 1px solid $azure-radiance-500;
+    background-color: $azure-radiance-500;
+
+    &:hover{
+        background-color: $azure-radiance-600;
+        border: 1px solid $azure-radiance-600;
+    }
+}
+.editTaskEnterButton{
+    padding: 6px 7px 5px 7px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    color: $rhino-3;
+}
+.editTask-background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(#000000, 0.3);
+    z-index: -1;
+}

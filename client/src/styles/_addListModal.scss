@@ -1,0 +1,73 @@
+@import "./variables";
+
+@mixin rightAlignWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.addListModal{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(#000000, 0.6);
+
+
+
+}
+.addListModal-modal{
+    background-color: #ffffff;
+    width: 500px;
+    border-radius: 0.5rem;
+    padding: 1.8rem 1.5rem;
+
+
+}
+.addListModal-closeIcon-wrapper{
+    @include rightAlignWrapper();
+    .addListModal-closeIcon{
+        cursor: pointer;
+    }
+}
+.addListModal-form{
+    margin-top: 1.5rem;
+
+    input{
+        width: 100%;
+        font-size: 25px;
+        font-weight: 700;
+        border: none;
+        caret-color: $azure-radiance-500;
+
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+            color: #d7d7d7;
+        }
+    }
+}
+.addListModal-btn-wrapper{
+    margin-top: 2rem;
+    @include rightAlignWrapper();
+    button{
+        cursor: pointer;
+        border-radius: 20px;
+        border: 1px solid $azure-blue-700;
+        background-color: $azure-blue-700;
+        padding: 0.6rem 3rem;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+
+        &:hover{
+            border: 1px solid $azure-blue-750;
+            background-color: $azure-blue-750;    
+        }
+    }
+}

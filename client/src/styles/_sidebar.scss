@@ -1,0 +1,211 @@
+@import "./variables";
+
+@mixin sidelink-Wrapper-Style{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 1.2rem;
+
+    cursor: pointer;
+
+    div{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+    }
+    &:hover{
+        background-color: $my-grey;
+    }  
+}
+
+.sidebar-container{
+    height: 100%;
+    border-right: 1px solid $grey-border;
+    padding: 1rem 0;
+}
+.sidebar-logo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 16rem;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    h1{
+        font-weight: 600;
+        color: #3e5acb;
+        font-family: 'Marmelad', sans-serif;
+        letter-spacing: 1px;
+    }
+}
+#waveLogo{
+    height: 2.2rem;
+    width: 2.2rem;
+}
+.sidebar-userProfile{
+    display: flex;
+    align-items: center;
+    margin: 0 0.3rem 0.8rem 0.3rem;
+    position: relative;
+    border-radius: 0.2rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid $azure-radiance-300;
+    }
+    &__name{
+        p{
+            &:first-child{
+                font-weight: 500;
+                color: $rhino-5;
+                font-size: 15px;
+            }
+            &:last-child{
+                color: #888888;
+                font-size: 14px;
+            }
+
+        }
+    }
+}
+.sidebar-userProfile-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0.9rem;
+}
+
+.sidebar-userProfile-modal-container{
+    transition: visibility 0.2s 0.5s linear,
+                opacity 0.2s 0.5s ease-in;
+    opacity: 1;
+    z-index: 1;
+}
+.sidebar-userProfile-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0px 0px 9px rgba(#000000, 0.2);
+    border-radius: 10px;
+    background: #ffffff;
+    width: 120%;
+    z-index: 2;
+
+}
+.sidebar_userProfile-modal-bg{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(#000000, 0.5);
+    z-index: 1;
+
+    cursor: default;
+}
+.sidebar-userProfile-modal-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 0.9rem;
+    cursor: default;
+}
+.sidebar-userProfile-modal-logout{
+    margin-top: 1rem;
+    padding: 0.7rem 0.9rem;
+
+    &:hover{
+        background-color: $grey-background;
+    }
+}
+#userProfleIcon{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.sidebar-links{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.side-link-view{
+    display: flex;
+    flex-direction: column;
+}
+.sidelink-wrappper{
+    margin-top: 0.8rem;
+    @include sidelink-Wrapper-Style();
+    p{
+        color: $rhino-5;
+        font-weight: 500;
+    }
+
+}
+.sidelink-wrappper-1{
+    @include sidelink-Wrapper-Style();
+        color: $rhino-5;
+        font-size: 14px;
+        
+
+}
+.sidelink-add{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-task{
+    padding: 0.6rem 1.8rem 0.6rem 3.2rem;
+    font-size: 14px;
+    color: $rhino-4;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:hover{
+        background-color: $my-grey;
+        cursor: pointer;
+    }
+}
+.sidebar-link-active{
+    color: $azure-radiance-600;
+    font-weight: 500;
+}
+.sidebar-icon-active{
+    color: #2c66e4;
+}
+.sidebar-newTask{
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    &:hover{
+        background-color: $my-grey;
+        cursor: pointer;
+    }
+
+    p{
+        font-size: 14px;
+        color: $rhino-4;
+    }
+}
+.sidebar-taskList-container{
+    overflow: hidden;
+    transition: height 0.5s;
+}
+.sidebar-taskList-hide{
+    transition: height 0.5s;
+}
+
+
+
+.sidebar-icon-container{
+    color:#929292;
+    font-size: 26px;
+    border-radius: 0.3rem;
+    &:hover{
+        color: $azure-radiance-500;
+        cursor: pointer;
+    }
+}

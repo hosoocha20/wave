@@ -19,6 +19,7 @@ Tailor each task list with unique background themes that resonate with your styl
   
 ### Main Page & My Day
   ![image](https://github.com/hosoocha20/wave/assets/135686209/a9b607f5-9d15-4207-b38f-8c63fe84ec7d)
+  
   https://github.com/hosoocha20/wave/assets/135686209/8051618d-c366-49e5-a2f9-76450bae4edd
 
   Curate a daily list of tasks, helping you maximize your productivity and accomplish more within your day.
@@ -26,6 +27,7 @@ Tailor each task list with unique background themes that resonate with your styl
 
 ### Create and Personalise Task Lists
   ![image](https://github.com/hosoocha20/wave/assets/135686209/76a0c92b-4829-42d2-b085-4e2494a8dbd9)
+ 
   https://github.com/hosoocha20/wave/assets/135686209/cac114d5-c0e3-42e5-8a0d-f194de4e5091
 
   Create personalised task lists to help your accomplish your goals.

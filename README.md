@@ -15,6 +15,11 @@ Tailor each task list with unique background themes that resonate with your styl
   ![image](https://github.com/hosoocha20/wave/assets/135686209/a9b607f5-9d15-4207-b38f-8c63fe84ec7d)
   ![Untitled video - Made with Clipchamp (1)](https://github.com/hosoocha20/wave/assets/135686209/bb172109-3027-43eb-9eb5-b9dca0b67c21)
 
+  https://github.com/hosoocha20/wave/assets/135686209/8cd70aab-b7be-4471-ba07-dd9053db958c
+
+
+
+
   Curate a daily list of tasks, helping you maximize your productivity and accomplish more within your day.
 
 - Create and Personalise Task Lists
